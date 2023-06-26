@@ -8,7 +8,7 @@ interface Color {
 const color : Color = {
   blue: 10,
   green: 10,
-  red: 10
+  red: 15
 }
 
 
