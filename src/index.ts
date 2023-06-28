@@ -9,3 +9,4 @@ export * from "./middlewares/ensure-auth"
 export * from "./middlewares/ensure-current-user"
 export * from "./middlewares/error-handler"
 
+export * from "./utils/Validator"

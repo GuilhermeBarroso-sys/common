@@ -1,4 +1,4 @@
-import { ZodError, z } from "zod";
+import { z } from "zod";
 import { CustomError, TError } from "./custom-error";
 
 class RequestValidationError extends CustomError {
