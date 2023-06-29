@@ -2,7 +2,12 @@ import { NextFunction, Request, Response } from "express";
 import { CustomError } from "../errors/custom-error";
 
 export function errorHandler(error: Error, request: Request, response: Response, next: NextFunction) {
-	return error instanceof CustomError 
-		? response.status(error.statusCode).json({ errors: error.serializeErrors() })
-		: response.status(500).json({ errors: [ { message: error.message } ] });
+  if(error instanceof CustomError ) {
+
+    return response.status(error.statusCode).json({ errors: error.serializeErrors() })
+  } else {
+    console.error(error)
+    return response.status(500).json({ errors: [ { message: error.message } ] });
+  }
+	
 }
