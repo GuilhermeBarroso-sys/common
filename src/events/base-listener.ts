@@ -7,12 +7,22 @@ interface Event {
 
 }
 
+interface setActWaitProps {
+  minutes: number;
+}
+
 
 abstract class Listener<T extends Event> {
   abstract subject : T["subject"];
   abstract queueGroupName : string;
   abstract onMessage(data: T["data"], msg: Message) : void;
   protected ackWait =  5 * 1000;
+  public getAckWait() {
+    return this.ackWait
+  }
+  public setAckWait({minutes} : setActWaitProps) {
+    this.ackWait = minutes * 1000;
+  }
   constructor(private client : Stan ) {}
 
 
