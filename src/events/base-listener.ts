@@ -23,7 +23,7 @@ abstract class Listener<T extends Event> {
   public setAckWait({minutes} : setActWaitProps) {
     this.ackWait = minutes * 1000;
   }
-  constructor(private client : Stan ) {}
+  constructor(protected client : Stan ) {}
 
 
   subscriptionOptions() {
