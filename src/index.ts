@@ -22,4 +22,7 @@ export * from './events/order-created-event'
 
 export * from './events/expiration-complete-event'
 
+export * from './events/payment-created-event'
+
+
 
